@@ -2,9 +2,13 @@
  * Learning Reference:
  * https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website
  * https://github.com/mdn/express-locallibrary-tutorial.git
+ * JWT Authentication - https://www.bezkoder.com/node-js-mongodb-auth-jwt/
  */
 var createError = require('http-errors');
 var express = require('express');
+const cors = require("cors");
+
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 
@@ -13,23 +17,17 @@ var winston = require('./config/winston');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var genreRouter = require('./routes/genre');
+var authRouter= require('./routes/auth.routes');
+
 const { default: mongoose } = require('mongoose');
 // const { devNull } = require('os');
 
 // const fs = require('fs');
 
 var app = express();
-
-// var accessLogStream = fs.createWriteStream(__dirname + '/logs/' + "access.log", {flags: 'a'});
-// app.use(morgan({stream: accessLogStream}));
-// app.use(logger('tiny', {
-//   stream: fs.createWriteStream('./access.log', {flags: 'a'})
-// }));
-
-// app.use(morgan(':method :status :url', {
-//   stream: fs.createWriteStream('./access.log', {flags: 'a'})
-// }));
-
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
 
 app.use(morgan('combined', { stream: winston.stream }));
 
@@ -60,6 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/genre', genreRouter);
+app.use('/', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
