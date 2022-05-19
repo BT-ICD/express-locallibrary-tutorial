@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\.873b672c7aa2d1959b811b27aa8c109fc7d7c333-audit.json",
+    "files": [
+        {
+            "date": 1652941015556,
+            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-19-11.log",
+            "hash": "e2bd09edeb2d6f8ef98d56223e2c7dee"
+        }
+    ],
+    "hashType": "md5"
+}

@@ -1,0 +1,28 @@
+{"level":"info","message":"::1 - - [18/May/2022:09:24:51 +0000] \"GET / HTTP/1.1\" 200 170 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n"}
+{"level":"info","message":"::1 - - [18/May/2022:09:24:51 +0000] \"GET /stylesheets/style.css HTTP/1.1\" 200 111 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n"}
+{"level":"info","message":"::1 - - [18/May/2022:09:24:51 +0000] \"GET /favicon.ico HTTP/1.1\" 404 1332 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n"}
+{"level":"info","message":"Hello from genre_list"}
+{"level":"info","message":"::1 - - [18/May/2022:09:37:27 +0000] \"GET /genre HTTP/1.1\" 200 304 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n"}
+{"level":"info","message":"::1 - - [18/May/2022:09:39:22 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 200 57 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n"}
+{"level":"debug","message":{"id":"625a685aa8c9b5bb4a2760b4"}}
+{"level":"info","message":"::1 - - [18/May/2022:09:40:42 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n"}
+2022-05-18 15:37:06 [34mdebug[39m: [object Object]
+2022-05-18 15:37:06 [32minfo[39m: ::1 - - [18/May/2022:10:07:06 +0000] "GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47"
+
+{"level":"debug","message":{"id":"625a685aa8c9b5bb4a2760b4"}}
+{"level":"info","message":"::1 - - [18/May/2022:10:08:19 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n"}
+{"level":"debug","message":{"id":"625a685aa8c9b5bb4a2760b4"},"timestamp":"2022-05-18T10:15:43.316Z"}
+{"level":"info","message":"::1 - - [18/May/2022:10:15:43 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-18T10:15:43.347Z"}
+{"level":"debug","message":{"id":"625a685aa8c9b5bb4a2760b4"},"timestamp":"2022-05-18T10:15:43.957Z"}
+{"level":"info","message":"::1 - - [18/May/2022:10:15:43 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-18T10:15:43.963Z"}
+{"level":"debug","message":{"id":"625a685aa8c9b5bb4a2760b4"},"timestamp":"2022-05-18T10:15:44.512Z"}
+{"level":"info","message":"::1 - - [18/May/2022:10:15:44 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-18T10:15:44.519Z"}
+{"level":"info","message":"::1 - - [19/May/2022:06:15:18 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-19T06:15:18.943Z"}
+{"level":"info","message":"::1 - - [19/May/2022:06:15:19 +0000] \"GET /stylesheets/style.css HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-19T06:15:19.022Z"}
+{"level":"info","message":"::1 - - [19/May/2022:06:15:19 +0000] \"GET /favicon.ico HTTP/1.1\" 404 1332 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-19T06:15:19.207Z"}
+{"level":"info","message":"Hello from genre_list","timestamp":"2022-05-19T06:15:25.969Z"}
+{"level":"info","message":"::1 - - [19/May/2022:06:15:26 +0000] \"GET /genre HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-19T06:15:26.057Z"}
+{"level":"debug","message":{"id":"625a685aa8c9b5bb4a2760b4"},"timestamp":"2022-05-19T06:15:30.961Z"}
+{"level":"info","message":"::1 - - [19/May/2022:06:15:30 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-19T06:15:30.997Z"}
+{"level":"debug","message":{"id":"625a685aa8c9b5bb4a2760b4"},"timestamp":"2022-05-19T06:16:58.590Z"}
+{"level":"info","message":"::1 - - [19/May/2022:06:16:58 +0000] \"GET /genre/625a685aa8c9b5bb4a2760b4 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47\"\n","timestamp":"2022-05-19T06:16:58.619Z"}
