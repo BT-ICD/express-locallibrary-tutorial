@@ -33,14 +33,32 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
   });
 };
 checkRolesExisted = (req, res, next) => {
+  console.log(req.body.roles)
+
   if (req.body.roles) {
     for (let i = 0; i < req.body.roles.length; i++) {
-      if (!ROLES.includes(req.body.roles[i])) {
-        res.status(400).send({
-          message: `Failed! Role ${req.body.roles[i]} does not exist!`
+
+      // if (!Role.includes(req.body.roles[i])) {
+      //   res.status(400).send({
+      //     message: `Failed! Role ${req.body.roles[i]} does not exist!`
+      //   });
+      //   return;
+      // }
+
+      Role.find({name:req.body.roles[i]}, function(err, doc){
+        if(err){
+              res.status(400).send({
+              message: `Failed! Error Role ${req.body.roles[i]} does not exist!`
+            });
+            return;
+          }
+          if(!doc){
+            res.status(400).send({
+            message: `Failed! Doc Role ${req.body.roles[i]} does not exist!`
+          });
+          return;
+        }
         });
-        return;
-      }
     }
   }
   next();

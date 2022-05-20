@@ -19,6 +19,7 @@ exports.signup = (req, res) => {
       return;
     }
     if (req.body.roles) {
+      
       Role.find(
         {
           name: { $in: req.body.roles }
@@ -28,6 +29,7 @@ exports.signup = (req, res) => {
             res.status(500).send({ message: err });
             return;
           }
+      
           user.roles = roles.map(role => role._id);
           user.save(err => {
             if (err) {
