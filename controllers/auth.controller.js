@@ -59,12 +59,16 @@ exports.signup = (req, res) => {
   });
 };
 exports.signin = (req, res) => {
+  console.log(req.body.username);
+
   User.findOne({
     username: req.body.username
   })
-    .populate("roles", "-__v")
-    .exec((err, user) => {
+  .populate("roles","-__v")
+  .exec((err, user) => {
       if (err) {
+        console.log('Error to populate roles');
+        console.log(err);
         res.status(500).send({ message: err });
         return;
       }

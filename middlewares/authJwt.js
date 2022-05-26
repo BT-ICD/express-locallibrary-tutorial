@@ -1,3 +1,7 @@
+/**
+ * Reference:
+ * https://medium.com/ms-club-of-sliit/jwt-bearer-token-authentication-for-express-js-5e95bf4dead0
+ */
 const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config.js");
 // const db = require("../models");
@@ -6,7 +10,21 @@ const config = require("../config/auth.config.js");
 const Role = require('../models/role.model');
 const User = require('../models/user.model');
 verifyToken = (req, res, next) => {
-  let token = req.headers["x-access-token"];
+  console.log(req.headers);
+
+  const bearerHeader = req.headers['authorization'];
+  console.log('bearerHeader');
+  console.log(bearerHeader);
+  let bearerToken;
+  if(bearerHeader){
+    const bearer = bearerHeader.split(' ');
+    bearerToken = bearer[1];
+    console.log(bearerToken);
+    
+  }
+  let token = bearerToken;
+  //To read from x-access-token
+  // let token = req.headers["x-access-token"];
   if (!token) {
     return res.status(403).send({ message: "No token provided!" });
   }
