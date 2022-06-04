@@ -10,17 +10,17 @@ const config = require("../config/auth.config.js");
 const Role = require('../models/role.model');
 const User = require('../models/user.model');
 verifyToken = (req, res, next) => {
-  console.log(req.headers);
+  // console.log(req.headers);
 
   const bearerHeader = req.headers['authorization'];
   console.log('bearerHeader');
   console.log(bearerHeader);
   let bearerToken;
-  if(bearerHeader){
+  if (bearerHeader) {
     const bearer = bearerHeader.split(' ');
     bearerToken = bearer[1];
     console.log(bearerToken);
-    
+
   }
   let token = bearerToken;
   //To read from x-access-token

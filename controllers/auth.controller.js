@@ -1,7 +1,5 @@
 const config = require("../config/auth.config");
-// const db = require("../models");
-// const User = db.user;
-// const Role = db.role;
+
 const Role = require('../models/role.model');
 const User = require('../models/user.model');
 var jwt = require("jsonwebtoken");
@@ -19,7 +17,7 @@ exports.signup = (req, res) => {
       return;
     }
     if (req.body.roles) {
-      
+
       Role.find(
         {
           name: { $in: req.body.roles }
@@ -29,7 +27,7 @@ exports.signup = (req, res) => {
             res.status(500).send({ message: err });
             return;
           }
-      
+
           user.roles = roles.map(role => role._id);
           user.save(err => {
             if (err) {
@@ -64,8 +62,8 @@ exports.signin = (req, res) => {
   User.findOne({
     username: req.body.username
   })
-  .populate("roles","-__v")
-  .exec((err, user) => {
+    .populate("roles", "-__v")
+    .exec((err, user) => {
       if (err) {
         console.log('Error to populate roles');
         console.log(err);
@@ -75,7 +73,7 @@ exports.signin = (req, res) => {
       if (!user) {
         return res.status(404).send({ message: "User Not found." });
       }
-      var passwordIsValid = req.body.password ==user.password;
+      var passwordIsValid = req.body.password == user.password;
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,

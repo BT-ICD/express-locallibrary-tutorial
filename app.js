@@ -19,6 +19,7 @@ var usersRouter = require('./routes/users');
 var genreRouter = require('./routes/genre');
 var authRouter= require('./routes/auth.routes');
 var userRouter= require('./routes/user.routes');
+var employeeRouter = require('./routes/employee');
 
 const { default: mongoose } = require('mongoose');
 // const { devNull } = require('os');
@@ -60,7 +61,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/genre', genreRouter);
 app.use('/', authRouter);
-app.use('/', userRouter);
+app.use('/employee', employeeRouter);
 
 
 // catch 404 and forward to error handler

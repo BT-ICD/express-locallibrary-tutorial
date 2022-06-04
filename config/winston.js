@@ -10,13 +10,13 @@
 var appRoot = require('app-root-path');
 var winston = require('winston');
 require('winston-daily-rotate-file');
-var transport = new winston.transports.DailyRotateFile({
-  filename: 'application-%DATE%.log',
-  datePattern: 'YYYY-MM-DD-HH',
-  // zippedArchive: true,
-  // maxSize: '20m',
-  // maxFiles: '14d'
-});
+// var transport = new winston.transports.DailyRotateFile({
+//   filename: 'application-%DATE%.log',
+//   datePattern: 'YYYY-MM-DD-HH',
+//   // zippedArchive: true,
+//   // maxSize: '20m',
+//   // maxFiles: '14d'
+// });
 
 const { timestamp, combine, errors, json } = winston.format;
 // define the custom settings for each transport (file, console)
@@ -40,6 +40,7 @@ var options = {
 };
 
 var transport = new winston.transports.DailyRotateFile({
+  level:'debug',
   filename: `${appRoot}/logs/%DATE%.log` ,//'application-%DATE%.log',
   datePattern: 'YYYY-MM-DD-HH',
   zippedArchive: true,
@@ -50,7 +51,7 @@ var transport = new winston.transports.DailyRotateFile({
 var logger = new winston.createLogger({
   format: winston.format.combine(timestamp(), errors({ stack: true }), json()),
   transports: [
-    new winston.transports.File(options.file),
+    
     new winston.transports.Console(options.console),
     transport
   ],

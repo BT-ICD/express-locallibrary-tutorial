@@ -6,44 +6,19 @@
     "auditLog": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\.873b672c7aa2d1959b811b27aa8c109fc7d7c333-audit.json",
     "files": [
         {
-            "date": 1652941015556,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-19-11.log",
-            "hash": "e2bd09edeb2d6f8ef98d56223e2c7dee"
+            "date": 1653988926927,
+            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-31-14.log",
+            "hash": "489ec90015985e1990bdf833a731da2a"
         },
         {
-            "date": 1652951099942,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-19-14.log",
-            "hash": "cdd05a924022376f62cc6868ac213178"
+            "date": 1653989446244,
+            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-31-15.log",
+            "hash": "6c456391ab7b08c3a10949471e9ece3e"
         },
         {
-            "date": 1652952652529,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-19-15.log",
-            "hash": "bfb2c29806a4d1fdf74e972a7df612c9"
-        },
-        {
-            "date": 1653035300470,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-20-13.log",
-            "hash": "5b04790de8e1480099dbb5bd35b0cc22"
-        },
-        {
-            "date": 1653035420903,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-20-14.log",
-            "hash": "29f969a475465da7dc4a3a53449ff8a6"
-        },
-        {
-            "date": 1653039057818,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-20-15.log",
-            "hash": "027adfcac5565dd69fe8deff1b0a79df"
-        },
-        {
-            "date": 1653546981832,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-26-12.log",
-            "hash": "49f501aa3d45e4038790dca86cc30b00"
-        },
-        {
-            "date": 1653550221435,
-            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-05-26-13.log",
-            "hash": "6b76c8b70ceac6870c17aab431235674"
+            "date": 1654320828925,
+            "name": "D:\\Learning\\ExpressJs\\express-locallibrary-tutorial\\logs\\2022-06-04-11.log",
+            "hash": "4e678f48200a32635b31dac6715b8a71"
         }
     ],
     "hashType": "md5"
