@@ -4,16 +4,21 @@
  * https://github.com/mdn/express-locallibrary-tutorial.git
  * JWT Authentication - https://www.bezkoder.com/node-js-mongodb-auth-jwt/
  */
+ require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 const cors = require("cors");
 
-
 var path = require('path');
 var cookieParser = require('cookie-parser');
 
+
 var morgan = require('morgan');
 var winston = require('./config/winston');
+
+
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var genreRouter = require('./routes/genre');
@@ -44,7 +49,7 @@ db.on('connected',()=>{
   console.log('DB Connected');
 });
 //end mongoose connection
-
+console.log(process.env.SECRET);
 
 
 // view engine setup

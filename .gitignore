@@ -6,3 +6,6 @@
 
 # application log
 /logs
+
+#Environement Secrent Key
+*.env
