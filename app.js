@@ -4,7 +4,7 @@
  * https://github.com/mdn/express-locallibrary-tutorial.git
  * JWT Authentication - https://www.bezkoder.com/node-js-mongodb-auth-jwt/
  */
- require('dotenv').config();
+ require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 const cors = require("cors");
@@ -37,6 +37,9 @@ var corsOptions = {
 };
 
 app.use(morgan('combined', { stream: winston.stream }));
+//To acces content from .env
+console.log(process.env.ENV);
+console.log(process.env.SECRETCONFIG);
 
 // app.use(morgan('combined'));
 //Set up mongoose connection
@@ -49,7 +52,7 @@ db.on('connected',()=>{
   console.log('DB Connected');
 });
 //end mongoose connection
-console.log(process.env.SECRET);
+
 
 
 // view engine setup
@@ -67,6 +70,7 @@ app.use('/users', usersRouter);
 app.use('/genre', genreRouter);
 app.use('/', authRouter);
 app.use('/employee', employeeRouter);
+
 
 
 // catch 404 and forward to error handler
