@@ -2,7 +2,7 @@
 /node_modules
 
 # production build
-/bin
+# /bin
 
 # application log
 /logs
