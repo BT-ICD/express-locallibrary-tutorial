@@ -25,6 +25,9 @@ var genreRouter = require('./routes/genre');
 var authRouter= require('./routes/auth.routes');
 var userRouter= require('./routes/user.routes');
 var employeeRouter = require('./routes/employee');
+var yearlistRouter = require('./routes/yearlist');
+var menuoptionlistRouter = require('./routes/menuoptionlist');
+var contentlistRouter = require('./routes/contentlist');
 
 const { default: mongoose } = require('mongoose');
 // const { devNull } = require('os');
@@ -70,9 +73,9 @@ app.use('/users', usersRouter);
 app.use('/genre', genreRouter);
 app.use('/', authRouter);
 app.use('/employee', employeeRouter);
-
-
-
+app.use('/yearlist',yearlistRouter);
+app.use('/menuoptions',menuoptionlistRouter);
+app.use('/contentlist',contentlistRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
