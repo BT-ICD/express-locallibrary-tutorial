@@ -3,6 +3,7 @@ const path= require('path');
 const fs = require('fs');
 
 const YearModel = require('../models/year.model');
+const SOURCEPATH = process.env.SOURCEFOLDERPATH;
 
 
 // const logger = require('../config/winston');
@@ -10,9 +11,11 @@ const YearModel = require('../models/year.model');
 exports.year_list = function(req,res,next){
     logger.info('Year list requested');
     let yearlist=[];
-    let names = fs.readdirSync('D:\\Modha_Content', {withFileTypes:true});
+    
+    let names = fs.readdirSync(SOURCEPATH, {withFileTypes:true});
     names.forEach((fileEntry)=>{
-        if(!fs.lstatSync('D:\\Modha_Content'+'\\' +fileEntry.name).isFile()){
+        let fname = path.join(SOURCEPATH,fileEntry.name );
+        if(!fs.lstatSync(fname).isFile()){
             console.log('FIle:',fileEntry.name);
            let data = new YearModel(fileEntry.name);
             // yearlist.push(new YearModel(fileEntry.name));

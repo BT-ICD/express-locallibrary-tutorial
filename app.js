@@ -47,13 +47,15 @@ console.log(process.env.SECRETCONFIG);
 // app.use(morgan('combined'));
 //Set up mongoose connection
 // var mongoose = require('mongoose');
-var mongoDB = 'mongodb://localhost:27017/my_database';
-mongoose.connect(mongoDB, {useNewUrlParser:true, useUnifiedTopology:true});
-var db = mongoose.connection;
-db.on('errpr' , console.error.bind(console, 'MongoDB connection error'));
-db.on('connected',()=>{
-  console.log('DB Connected');
-});
+
+// var mongoDB = 'mongodb://localhost:27017/my_database';
+// mongoose.connect(mongoDB, {useNewUrlParser:true, useUnifiedTopology:true});
+// var db = mongoose.connection;
+// db.on('errpr' , console.error.bind(console, 'MongoDB connection error'));
+// db.on('connected',()=>{
+//   console.log('DB Connected');
+// });
+
 //end mongoose connection
 
 

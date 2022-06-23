@@ -70,22 +70,23 @@ exports.content_list_pages=function(req,res,next){
     return res.status(200).json(contentList);
 }
 exports.content_detail = function(req,res,next){
-    console.log('content details called');
-    const yearname = req.params.yearname;
-    const filename=req.params.filename;
-    //To check directory exist 
-    const dirName = path.join(SOURCEPATH, yearname,"Listing") ;
-    if(!fs.existsSync(dirName)){
-        return res.status(404).json({status:404, message:'No data found'});
-    }
-    //res.download("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf");
-    // OR
-    // res.writeHead(200, {
-    //     "Content-Type": "application/octet-stream",
-    //     "Content-Disposition" : "attachment; filename=1964_Listing_0002.pdf"  });
-    //   fs.createReadStream("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf").pipe(res);
-    const fullfilename = path.join(dirName,filename);
-    console.log(fullfilename);
-    //res.sendFile("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf");
-    res.sendFile(fullfilename);
+    // console.log('content details called....');
+    // const yearname = req.params.yearname;
+    // const filename=req.params.filename;
+    // //To check directory exist 
+    // const dirName = path.join(SOURCEPATH, yearname,"Listing") ;
+    // if(!fs.existsSync(dirName)){
+    //     return res.status(404).json({status:404, message:'No data found'});
+    // }
+    // //res.download("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf");
+    // // OR
+    // // res.writeHead(200, {
+    // //     "Content-Type": "application/octet-stream",
+    // //     "Content-Disposition" : "attachment; filename=1964_Listing_0002.pdf"  });
+    // //   fs.createReadStream("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf").pipe(res);
+    
+    // const fullfilename = path.join(dirName,filename);
+    // console.log(fullfilename);
+    res.sendFile("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf");
+    // res.sendFile(fullfilename);
 }
