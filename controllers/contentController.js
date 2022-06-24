@@ -2,8 +2,10 @@ const logger = require('../config/winston');
 const ContentModel = require('../models/contentList.model');
 const fs = require('fs');
 const path = require('path');
+const { dirname } = require('path');
 
 const SOURCEPATH = process.env.SOURCEFOLDERPATH;
+let resourcePath= process.env.URLNAME;
 /**
  * To return list of content/files based on arguments such as year, menu option type
  */
@@ -14,6 +16,7 @@ exports.content_list = function(req,res,next){
     let contentList =[];
     const yearname = req.params.yearname;
     let optionid = req.params.optionid;
+
     console.log('content list requested except vastiptrak');
     //To check directory exist 
     const dirName = path.join(SOURCEPATH, yearname)
@@ -21,12 +24,40 @@ exports.content_list = function(req,res,next){
         return res.status(200).json('invalid directory name');
     }
     let names = fs.readdirSync(dirName);
+    
     for(let i = 0;i<names.length;i++){
         let fileName = path.join(dirName, names[i]);  //"D:\\Modha_Content\\"+yearname+"\\"+names[i];
         if (fs.lstatSync(fileName).isFile()){
-            const lastFourDigits = names[i].substring(names[i].length-4);
-            console.log(lastFourDigits);
-            contentList.push(new ContentModel(yearname ,names[i]));
+            if(optionid=="1"){
+                if( names[i].indexOf("Index")>0){
+                    let obj = new ContentModel(yearname ,names[i], resourcePath + + yearname +  "/"+  optionid +"/" + names[i]);
+                    contentList.push(obj);
+                }
+            }
+            else if (optionid==3){
+                if( names[i].indexOf("Advertise")>0){
+                    let obj = new ContentModel(yearname ,names[i], resourcePath + + yearname +  "/"+  optionid +"/" + names[i]);
+                    contentList.push(obj);
+                }
+            }
+            else if (optionid==4){
+                if( names[i].indexOf("Photos")>0){
+                    let obj = new ContentModel(yearname ,names[i], resourcePath + + yearname +  "/"+  optionid +"/" + names[i]);
+                    contentList.push(obj);
+                }
+            }
+            else if (optionid==5){
+                if( names[i].indexOf("Cover_Page")>0){
+                    let obj = new ContentModel(yearname ,names[i], resourcePath + + yearname +  "/"+  optionid +"/" + names[i]);
+                    contentList.push(obj);
+                }
+            }
+            else if (optionid==6){
+                if( names[i].indexOf("Other")>0){
+                    let obj = new ContentModel(yearname ,names[i], resourcePath + + yearname +  "/"+  optionid +"/" + names[i]);
+                    contentList.push(obj);
+                }
+            }
         }
     }
     /**Todo: Not able to access yearName variabe inside forEach  */
@@ -50,7 +81,7 @@ exports.content_list_pages=function(req,res,next){
     const endpage= parseInt(req.params.endpage);
     //To check directory exist 
     const dirName = path.join(SOURCEPATH, yearname,"Listing") ;
-    if(optionid!="1"){
+    if(optionid!="2"){
         return res.status(400).json({status:400, message:'invalid parameter'});
     }
     if(!fs.existsSync(dirName)){
@@ -62,31 +93,32 @@ exports.content_list_pages=function(req,res,next){
         let fileName = path.join(dirName, names[i]); //"D:\\Modha_Content\\"+yearname+"\\Listing\\"+names[i];
         if (fs.lstatSync(fileName).isFile()){
             const lastFourDigits = parseInt( names[i].substring(13,17));
+
+
             if(lastFourDigits>=startpage && lastFourDigits<=endpage){
-                contentList.push(new ContentModel(yearname, names[i]));
+                let obj = new ContentModel(yearname ,names[i], resourcePath + yearname +  "/"+   names[i]);
+                contentList.push(obj);
             }
         }
     }
     return res.status(200).json(contentList);
 }
 exports.content_detail = function(req,res,next){
-    // console.log('content details called....');
-    // const yearname = req.params.yearname;
-    // const filename=req.params.filename;
-    // //To check directory exist 
-    // const dirName = path.join(SOURCEPATH, yearname,"Listing") ;
-    // if(!fs.existsSync(dirName)){
-    //     return res.status(404).json({status:404, message:'No data found'});
-    // }
-    // //res.download("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf");
-    // // OR
-    // // res.writeHead(200, {
-    // //     "Content-Type": "application/octet-stream",
-    // //     "Content-Disposition" : "attachment; filename=1964_Listing_0002.pdf"  });
-    // //   fs.createReadStream("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf").pipe(res);
-    
-    // const fullfilename = path.join(dirName,filename);
-    // console.log(fullfilename);
-    res.sendFile("D:\\Modha_Content\\1964\\Listing\\1964_Listing_0002.pdf");
-    // res.sendFile(fullfilename);
+    console.log('content details called....');
+    const yearname = req.params.yearname;
+    let optionid = req.params.optionid;
+    const filename=req.params.filename;
+    //To check directory exist 
+    let  dirName = path.join(SOURCEPATH, yearname) ;
+    let fullFileName = "";
+    //2 means listing - vasti patrak
+    if(optionid==2){
+        dirName = path.join(SOURCEPATH, yearname,"Listing") ;
+    }
+    fullFileName = path.join(dirName, filename);
+    console.log(fullFileName);
+    if(!fs.existsSync(fullFileName)){
+        return res.status(404).json({status:404, message:'No data found'});
+    }
+    res.sendFile(fullFileName);
 }

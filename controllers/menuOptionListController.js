@@ -3,10 +3,7 @@ const MenuOptionModel= require('../models/menuOption.model');
 
 /**
  * To get list of menu item
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
- * @returns 
+
  */
 exports.menu_list = function(req,res,next){
     logger.info('menu list requested');

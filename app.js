@@ -28,6 +28,7 @@ var employeeRouter = require('./routes/employee');
 var yearlistRouter = require('./routes/yearlist');
 var menuoptionlistRouter = require('./routes/menuoptionlist');
 var contentlistRouter = require('./routes/contentlist');
+var contentDetail = require('./routes/contentdetail');
 
 const { default: mongoose } = require('mongoose');
 // const { devNull } = require('os');
@@ -78,6 +79,7 @@ app.use('/employee', employeeRouter);
 app.use('/yearlist',yearlistRouter);
 app.use('/menuoptions',menuoptionlistRouter);
 app.use('/contentlist',contentlistRouter);
+app.use('/contentdetail', contentDetail);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
